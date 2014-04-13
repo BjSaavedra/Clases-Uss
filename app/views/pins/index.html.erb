@@ -1,0 +1,43 @@
+<h1>Bibloteca de videos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Video</th>
+      <th>Foto</th>
+      <th>Ramo</th>
+      <th>Semestre</th>
+      <th>Fecha</th>
+      <th>Carrera</th>
+      <th>Profesor</th>
+      <th>Tiempo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pins.each do |pin| %>
+      <tr>
+        <td><%= tag(pin.video) %></td>
+        <td><%= image_tag(pin.foto) %></td>
+        <td><%= pin.ramo %></td>
+        <td><%= pin.semestre %></td>
+        <td><%= pin.fecha %></td>
+        <td><%= pin.carrera %></td>
+        <td><%= pin.profesor %></td>
+        <td><%= pin.tiempo %></td>
+        <td><%= link_to 'Show', pin %></td>
+        <!--
+        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
+        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pin', new_pin_path %>
